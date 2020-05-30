@@ -6,7 +6,7 @@ from keras.layers import Dense,LSTM,Dropout
 from sklearn.preprocessing import MinMaxScaler
 np.random.seed(1337) # for reproducibility
 
-df = pd.read_csv('C:\\Users\\Anwesha\\Desktop\\GOOGL.csv')#GETTING DATA AS A PANDAS DATAFRAME
+df = pd.read_csv('GOOGL Stock Prices.csv')#GETTING DATA AS A PANDAS DATAFRAME,PLEASE INSERT YOUR OWN FILE PATH WHEN IMPLEMENTING
 df=df.iloc[::-1]#REVERSING THE DATAFRAME TO CHANGE TO ASCENDING
 data=df[['Date','Close']]#EXTRACTING THE CLOSING PRICE COLUMN WHICH IS TO BE WORKED UPON
 
@@ -33,7 +33,7 @@ model = Sequential()
 model.add(LSTM(units=50, return_sequences=True, input_shape=(x_train.shape[1],1)))
 model.add(LSTM(units=50))
 model.add(Dense(15))
-model.add(Dropout(0.1))
+model.add(Dropout(0.5))
 
 model.compile(loss='mean_squared_error', optimizer='adam')
 model.fit(x_train, y_train, epochs=5, batch_size=1, verbose=2)#5 EPOCHS GIVE REASONABLY GOOD ACCURACY
