@@ -4,7 +4,7 @@ This is a simple, easy to understand LSTM forecast model for Stock Price Predict
 
 For simplicity's sake, the model is trained only on the daily closing price. It is trained on the closing prices of the past 30 days to predict the closing prices of the next 15 days. The data is normalized using MinMaxScaler before being fed to the model. No other preprocessing is done.
 
-A sequential model is used containing two LSTM layers and a final regression layer with a dropout of 0.5. 5 epochs through the model gives reasonable accuracy. The loss is measured using mean squared error metric with Adam optimizer.  
+A sequential model is used containing two LSTM layers and a final dense fully connected layer with a dropout of 0.5. 5 epochs through the model gives reasonable accuracy. The loss is measured using mean squared error metric with Adam optimizer.  
 
 
 
